@@ -2,14 +2,14 @@
 
 This project is amazon prime video  clone build in MERN Stack. 
 
-Hoste on netlify https://myprimeclone.netlify.app/
+Hosted on netlify https://myprimeclone.netlify.app/
 
 
 **Features** 
 
 * Registered and Guest users can Watch the trailer of movies
 * Select movies by different language
-* Only Registred user can add movies and tv shows to there watchlist
+* Only registered user can add movies and tv shows to their watchlist
 * While resetting the password registered user will receive email and through the link present inside the email user will reset the password 
 
 
@@ -62,7 +62,7 @@ Hoste on netlify https://myprimeclone.netlify.app/
 **Reference** : 
 
 * Icons are used from  material ui  
-     https://material-ui.com/components/material-icons/
+    https://material-ui.com/components/material-icons/
 
 * All movie and tv shows information taken  from TMDB API 
     https://developers.themoviedb.org/3
