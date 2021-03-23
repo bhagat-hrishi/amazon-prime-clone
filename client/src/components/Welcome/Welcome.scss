@@ -1,0 +1,23 @@
+$navBackground: #0f171e;
+$buttonBackground: #0f79af;
+$bannerBackground: black;
+
+@mixin generalForAllBanner {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+@mixin generalForAllButton {
+  background-color: $buttonBackground;
+  padding: 1rem;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: larger;
+  border-radius: 3px;
+}
+

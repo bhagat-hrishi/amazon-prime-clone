@@ -1,0 +1,168 @@
+@import '../Welcome.scss';
+
+// for banner 3
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap");
+
+
+
+
+// Welcome Banner 1
+.welcomebanner1 {
+    @include generalForAllBanner();
+    padding-top: 80px;
+    background: $bannerBackground;
+    height: 520px;
+}
+  
+.welcomebanner1__contet {
+    width: 45%;
+    color: white;
+    padding: 1rem;
+    margin-top: 5%;
+}
+.welcomebanner1__contet__decscription {
+    font-size: large;
+}
+
+.welcomebanner1_img {
+    width: 46%;
+    position: relative;
+    right: 0%;
+    top: 0%;
+    height: 400px;
+}
+
+.welcomebanner1_img img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-bottom-color: linear-gradient(rgb(46, 41, 41), black);
+    border-top-color: liner-gradient(black, rgb(26, 7, 7));
+}
+
+// for welcome banner 2
+.welcomebanner2 {
+    @include generalForAllBanner();
+    background-color: $bannerBackground;
+    height: auto;
+    font-family: "Noto Serif", serif;
+}
+
+.welcomebanner2__img {
+    width: 63%;
+}
+
+.welcomebanner2__img img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.welcomebanner2__content {
+    color: white;
+    padding: 4rem;
+    width: 30%;
+}
+.welcomebanner2__contet__decscription {
+    font-size: x-large;
+}
+// for welcome banner 3
+.welcomebanner3 {
+    @include generalForAllBanner();
+    background-color: $bannerBackground;
+
+    height: auto;
+    font-family: "Noto Serif", serif;
+}
+
+.welcomebanner3__img {
+    width: 50%;
+}
+
+.welcomebanner3__img img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.welcomebanner3__content {
+    color: white;
+    padding: 30px;
+    width: 40%;
+}
+
+.welcomebanner3__contet__decscription {
+    font-size: x-large;
+}
+
+// general for all buttons
+.welcomebanner1__contet button,
+.welcomebanner2__content button,
+.welcomebanner3__content button {
+    @include generalForAllButton();
+}
+
+
+@media screen and (max-width: 700px) {
+    // For banner 1
+    .welcomebanner1 {
+        height: auto;
+        flex-direction:column-reverse ;
+    }
+    .welcomebanner1__img {
+        height: auto;
+        margin-bottom: 1%;
+    }
+    .welcomebanner1__img img {
+        height: auto;
+    }
+    //  Only for banner 2
+    .welcomebanner2__img img {
+        width: 90%;
+        position: relative;
+        left: 5%;
+    }
+
+    //   only for banner 3
+    .welcomebanner3__line {
+        height: 2%;
+        background: linear-gradient(to top, rgb(0, 0, 0), rgb(22, 22, 22));
+    }
+    //   common for 2 and 3
+    .welcomebanner2,
+    .welcomebanner3 {
+        flex-direction: column;
+        overflow: hidden;
+    }
+    //   comman between banner 1, 2 and 3
+
+    .welcomebanner1_img,
+    .welcomebanner2__img,
+    .welcomebanner3__img {
+        width: 100vw;
+    }
+    .welcomebanner1__contet__title,
+    .welcomebanner2__content__title,
+    .welcomebanner3__content__title {
+        font-size: 2rem;
+        width: 100%;
+    }
+    .welcomebanner1__contet,
+    .welcomebanner2__content,
+    .welcomebanner3__content {
+        width: 90%;
+        padding: 1rem;
+        margin: auto;
+        text-align: center;
+    }
+    .welcomebanner1__contet button,
+    .welcomebanner2__contet button,
+    .welcomebanner3__contet button {
+        padding: 0.5rem;
+    }
+    .welcomebanner1__contet__decscription,
+    .welcomebanner2__contet__decscription,
+    .welcomebanner3__contet__decscription {
+        font-size: medium;
+    }
+}

@@ -1,0 +1,70 @@
+#wlist{
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    left: 65px;
+    overflow: hidden;
+    padding-bottom: 5rem;
+    overflow-y: scroll;
+}
+
+.single-watchlist-item{
+    padding: .5rem;
+    width: 270px;
+    height: 200px;
+    /* margin: 1rem; */
+    position: relative;
+
+    img{
+        cursor: pointer;
+        width: 250px;
+        height: 150px;
+        border-radius: 2px;
+    }
+
+    .delete-watchlist-icon{
+        position: absolute;
+        right: 5px;
+        display: block;
+        color:  #8197a4;
+        cursor: pointer;
+        font-size: 2rem;
+        text-align: center;
+    }
+    .delete-watchlist-icon:hover{
+        color: white;
+    }
+}
+
+.empty-watchlist{
+    text-align: center;
+    height: 610px;
+    img{
+        width: 217px;
+        height: 217px;
+        object-fit: contain;
+        text-align: center;
+    }
+    .empty-watchlist__warning-message{
+        color: #fff;
+        font-weight: bolder;
+        font-size: 1.2rem;
+    }
+
+    .empty-watchlist__toadd-message{
+        color: #8197a4;
+        font-size: 1rem;
+        padding: 0 1rem;
+        .toadd-message-link{
+            color: #79b8f3;
+            transition: color .2s ease-in-out;
+            text-decoration: none;
+        }   
+
+        .toadd-message-link:hover{
+            color: #90dffe;
+        }
+    }
+    
+}

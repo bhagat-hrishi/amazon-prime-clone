@@ -1,0 +1,180 @@
+$backgroundColor: #1b2530;
+$formBackgroundColor: rgba(15, 23, 30, 0.2);
+
+.main-nav {
+  width: 100%;
+  overflow: hidden;
+  padding: 1.1rem 0;
+  background-color: $backgroundColor;
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+  position: fixed;
+  z-index: 5;
+}
+
+#mylinks{
+  width:40%;
+}
+.main-nav__right{
+  display: flex;
+  width: 30%;
+  justify-content: space-between;
+}
+
+.main-nav__right__search-form {
+  border: none;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(129, 151, 164, 0.5);
+  width: 60%;
+  background-color: $formBackgroundColor;
+}
+
+.main-nav__right__search-form:hover {
+  border-color: rgba(129, 151, 164, 1);
+  cursor: pointer;
+}
+
+.main-nav__right__search-form__search-icon {
+  height: 80%;
+  width: auto;
+  color: rgba(242, 244, 246, 0.9);
+}
+.main-nav__right__search-form__search-input {
+  background-color: $backgroundColor;
+  outline: none;
+  border: none;
+  height: 100%;
+  width: 100%;
+  color:white;
+  transition: width 2s;
+  font-size: 1rem;
+}
+
+::placeholder {
+  color: rgba(242, 244, 246, 0.5);
+}
+
+.main-nav__right__account {
+  height: 80%;
+  position: relative;
+  right: 10%;
+  display: flex;
+  width: 18%;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background: $backgroundColor;
+  outline: none;
+  border: none;
+  color: rgba(242, 244, 246, 0.9);
+}
+.main-nav__right__account__logo {
+  display: inline-block;
+}
+.main-nav__right__account__name {
+  display: inline-block;
+  position: relative;
+  top: 40%;
+}
+
+.main-nav__right__account:hover{
+    color: white;
+}
+
+
+#userinfoDiv{
+  width: 0%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 10;
+  height: 100%;
+  background: #252e39;
+  transition: 0.2s;
+  h3{
+    color: #c4cacf;
+    margin-top: 1rem;
+    vertical-align: middle;
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+  }
+  
+  hr{
+    background: #c4cacf;
+    height: 1px;
+  }
+
+  .userinfoDiv__link{
+    text-decoration: none;
+    color: rgba(242, 244, 246, 0.9);
+    display: block;
+    margin-top: 1rem;
+    text-align: left;
+    font-weight: bold;
+    padding: 1.5rem;
+  }
+  .userinfoDiv__link:hover{
+    color: #fff;
+  }
+  #canceluserinfoDiv{
+    color: rgba(242, 244, 246, 0.9);
+    margin-top: 2rem;
+    cursor: pointer;
+    margin-left: 1.5rem
+  }
+  #canceluserinfoDiv:hover{
+    color: #fff;
+  }
+
+}
+
+@media screen and (max-width: 1500px) {
+  .main-nav__right{
+      width: 45%;
+  }
+}
+@media screen and (max-width: 1300px) {
+    .main-nav__right{
+        width: 40%;
+    }
+
+}
+
+
+
+@media screen and (max-width:1000px){
+  .main-nav__right{
+    width: 20%;
+    justify-content: space-around;
+    // justify-content: flex-end;
+  }
+  .main-nav__right__search-form{
+    width: 100%;
+    border: none;
+  }
+  .main-nav__right__search-form__search-input{
+    width: 0%;
+  }
+  .main-nav__right__account{
+    margin-right: 1rem;
+    right: 27%;
+  }
+
+}
+
+@media screen and (max-width: 770px) {
+    
+    #mylinks{
+      width: 60%;
+    }
+    .main-nav__right{
+        width: 35%;
+    }
+    .main-nav__right__account{
+      right: 33%;
+    }
+   
+}
+

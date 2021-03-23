@@ -1,0 +1,60 @@
+.banner {
+  height: 88vh;
+  width: 100%;
+  background:#0f171e;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+.banner::-webkit-scrollbar {
+  display: none;
+}
+.banner__single-item {
+  width: 100%;
+  height: 88vh;
+  display: inline;
+  object-fit: contain;
+}
+
+.banner__single-item__title {
+  color: white;
+  position: absolute;
+  top: 25%;
+  left: 5%;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+.SingleItemOfBanner_WatchNow {
+  position: absolute;
+}
+.banner__single-item__image {
+  width: 100%;
+  height: 88vh;
+  cursor: pointer;
+}
+
+.showItem {
+  display: block;
+}
+
+.hideItem {
+  display: none;
+}
+
+@media screen and (max-width: 700px) {
+  .banner {
+    height: 45%;
+    object-fit: contain;
+  }
+  .banner__single-item__title {
+    font-size: 1.5rem;
+    top: 40%;
+    left: 10%;
+  }
+  .banner__single-item__image {
+    height: 60vh;
+
+    object-fit: contain;
+  }
+}

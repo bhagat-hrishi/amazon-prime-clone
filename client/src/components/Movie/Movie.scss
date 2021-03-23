@@ -1,0 +1,205 @@
+$backgroundColor:#0f171e;
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.watch-item{
+    color: #ffffff;
+    margin-top: 76px;
+    background: $backgroundColor;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+   
+}
+.watch-item__left{
+    position: relative;
+    left: 1%;
+    width: 55%;
+    color: #fff;
+    margin-left: 30px;
+    
+}
+.watch-item__right{
+    width: 40%;
+    height: 50vh;
+    img{
+        width: 100%;
+        height: 100%;
+        right: 0;
+        object-fit: contain;
+        top: 100px
+
+    }
+}
+// .watch-item__img1{
+//     position: absolute;
+//     top: 0;
+//     width: 950px;
+//     height: 600px;
+//     right: 0;
+//     background: linear-gradient(90deg, #0f171e 10%, rgba(15, 23, 30, 0));
+// }
+
+// .watch-item__img2{
+//     position: absolute;
+//     top: 0;
+//     width: 950px;
+//     height: 600px;
+//     right: 0;
+//     background: linear-gradient(0deg, #0f171e 0, rgba(15, 23, 30, 0) 50%);
+// }
+
+.watch-item__info{
+    color: #8197a4;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 50%;
+    padding-bottom: 1rem ;
+}
+
+.watch-item__overview{
+    width: 80%;
+    text-align: justify;
+    text-justify: inter-word;
+    padding-bottom: 1rem ;
+}
+.watch-item__buttons{
+
+    display: flex;   
+    flex-wrap: wrap;
+    padding-bottom: 1rem ;
+    Button{
+        color: white;
+        // padding: 0.8rem 1.2rem;
+        width: auto;
+        height: 4rem;
+        text-transform: none;
+        text-align: left;
+        margin-right: .5rem;
+        margin-bottom: .5rem;
+    }
+    
+    // to select last 3 childs 
+    Button:nth-child(n+2){
+        background: #425265;
+    }
+
+    Button:nth-child(n+2):hover{
+        background: #566b84;
+    }
+    .watch-item__buttons__play{
+        background: #0f79af;
+    }
+    .watch-item__buttons__play:hover{
+        background: #1399de;
+    }
+}
+
+// For watching youtube trailer start
+.watch-item__yt-trailer{
+    height: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-y: hidden;
+    transition: 0.5s;
+}
+
+.yt-trailer__close-button{
+    bottom: 50px;
+    position: absolute;
+    text-align: center;
+
+    color: #0f79af;
+    cursor: pointer;
+    left: 50%;
+    text-decoration: none;
+    display: block;
+    font-size: 5rem;
+}
+.yt-trailer__close-button:hover{
+    color: #425265;
+}
+.watch-item__yt-trailer__video{
+    width: 100%;
+    height: auto;
+
+    marquee{
+        font-weight: bold;
+        font-size: 2rem;
+    }
+}
+
+
+// For watching youtbe trailer end
+
+#wi-extra-info-links{
+    background: #0f171e;
+    width: 100%;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+    a{
+        color: #8197a4;
+        text-decoration: none;
+        padding: .5rem;
+        font-weight: bolder;
+        font-size: 1.3rem;
+    }
+    a:hover{
+        color: #fff;
+    }
+
+}
+.watch-item__termsofuse{
+    font-size: small;
+    span{
+        color: #79b8f3;
+        cursor: pointer;
+    }
+    span:hover{
+        color: #bfddf9;
+    }
+}
+// For mobile view
+@media screen  and (max-width:480px){
+    // *{
+    //     overflow: scroll;
+    // }
+    .watch-item{
+        flex-direction: column-reverse;
+        margin-top: 2%;
+    }
+    .watch-item__right{
+        width: 96%;
+        margin: auto;
+
+    }
+    .watch-item__left{
+        width: 96%;
+        left: 0;
+        margin: auto;
+        margin-left: 0;
+    }
+    .watch-item__info{
+        width: 94%;
+        margin-left: .5rem;
+    }
+    .watch-item__overview{
+        width: 94%;
+        
+    }
+    .watch-item__buttons{
+        flex-direction: column;
+        Button{
+            text-align: left;
+        }
+    }
+}

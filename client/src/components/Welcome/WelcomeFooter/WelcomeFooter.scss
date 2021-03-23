@@ -1,0 +1,42 @@
+.welcomefooter{
+    padding: 2rem;
+    background: #222;
+}
+.welcomefooter__logo{
+    display: flex;
+    justify-content: center;
+}
+
+.welcomefooter__links{
+    display: flex;
+    width: 30%;
+    margin-top: 1rem;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.welcomefooter__links__link-item{
+    text-decoration: none;
+    color: #0f79af;
+}
+
+.welcomefooter__last{
+    margin-top: 1rem;
+    text-align: center;
+    color: white;
+}
+
+
+@media screen and  (max-width:440px){
+    .welcomefooter__links{
+        flex-direction: column;
+        width: 100%;
+    }
+    .welcomefooter__links__link-item{
+        padding: .5rem;
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+    
+}

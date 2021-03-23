@@ -1,0 +1,128 @@
+@import '../Welcome.scss';
+
+// Navigation  Css Start
+.welcome__nav {
+    @include generalForAllBanner();
+    position: fixed;
+    background-color: $navBackground;
+    z-index: 5;
+    justify-content: space-between;
+    height: 8%;
+  }
+  
+  .welcome__nav__logo {
+    position: relative;
+    top: 20%;
+  }
+  
+  .welcome__nav__logo img {
+    width: 140px;
+    height: 35px;
+    object-fit: cover;
+  }
+  
+  .welcome__nav__links {
+    width: 40%;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    right: 5%;
+    visibility: visible;
+  }
+  
+  // Navigation For mobile is hiddne on Desktop
+  .welcome__nav__mobile-icon {
+    visibility: hidden;
+  }
+  
+  .welcome__nav__link {
+    display: inline-block;
+    text-decoration: none;
+    color: rgba(242, 244, 246, 0.9);
+    font-weight: bolder;
+    padding: .5rem;
+    top: 10px;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .welcome__nav__link:hover {
+    color: white;
+  }
+  
+  // for responsive design
+  @media screen and (max-width: 1200px) {
+    .welcome__nav__links {
+      width: 40%;
+    }
+  }
+  @media screen and (max-width: 448px) {
+    // Welcome nav
+    .welcome__nav {
+      padding: 0.5rem 0;
+      height: 10%;
+    }
+  
+    //   hide desktop nav
+    .welcome__nav__links {
+      visibility: hidden;
+    }
+    //   make mobile nav visible
+    .welcome__nav__mobile-icon {
+      visibility: visible;
+    }
+    .welcome__nav__mobile-icon button {
+      padding: 0.5rem;
+      cursor: pointer;
+      border: 2px solid white;
+      border-radius: 5px;
+      position: fixed;
+      top: 1%;
+      right: 5%;
+      background: none;
+      color: white;
+    }
+    .welcome__nav__mobile-icon button:hover,
+    .welcome__nav__mobile-icon button:active {
+      color: #0f171e;
+      background: white;
+    }
+  
+    //    main mobile nav
+    .welcome_mobile-nav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      left: 0;
+      background: #0f171e;
+      overflow-x: hidden;
+      transition: 0.5s;
+    }
+  
+    //   For Close button on mobile nav
+    #closeBtn {
+      color: white;
+      position: relative;
+      left: 70%;
+      top: 5%;
+      font-size: 6rem;
+      cursor: pointer;
+    }
+  
+    //   links on mobile nav
+    .mobile-link {
+      position: relative;
+      top: 10%;
+      width: 100%;
+      font-size: 2rem;
+      display: block;
+      text-align: center;
+      margin-top: 30px;
+      color: white;
+      font-weight: bolder;
+      text-decoration: none;
+    }
+  }
+  

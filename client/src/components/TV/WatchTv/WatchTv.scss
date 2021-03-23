@@ -1,0 +1,28 @@
+
+// *{
+//     padding: 0;
+//     margin: 0;
+//     box-sizing: border-box;
+// }
+
+#selectseason{
+    
+        background: #425265;
+        color: #fff;
+        border: none;
+        padding: 1rem;
+    
+    
+
+   
+}
+select:focus > option:checked { 
+    color:#c4cacf !important;
+    padding: 1rem !important;
+}
+
+option:hover {
+    background-color: #488f8f; 
+} 
+
+

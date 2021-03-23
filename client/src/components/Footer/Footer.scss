@@ -1,0 +1,30 @@
+.Footer {
+  background-color: #0f171e;
+  padding: 100px 0 50px 0;
+}
+
+.FooterLogoContainer {
+  display: flex;
+}
+
+.FooterLogo {
+  width: 107px;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.FooterInfo {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.FooterInfo a {
+  text-decoration: none;
+  color: #79b8f3;
+  margin-right: 1rem;
+}
+.FooterInfo a:hover {
+  color: #90dffe;
+}

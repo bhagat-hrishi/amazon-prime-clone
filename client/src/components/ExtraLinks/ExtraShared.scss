@@ -1,0 +1,64 @@
+$textColor:#0f171e;
+
+.extradiv{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    top: 20%;
+    
+}
+.extradiv__title{
+    color:$textColor ;
+}
+
+#linkedin{
+    text-decoration: none;
+    font-weight: bold;
+    padding: 1rem;
+    width: 30%;
+    margin: auto;
+    margin-top: 10%;
+    display: block;
+   
+    text-align: center;
+    cursor: pointer;
+    font-size: larger;
+    border: 1px solid #0a66c2;
+    color: #0a66c2;
+    background: white;
+}
+
+#linkedin:hover{
+    border: 1px solid white;
+    color: white;
+    background: #0a66c2;   
+}
+
+#backto{
+    text-decoration: none;
+    font-weight: bold;
+    padding: 1rem;
+    margin-top: 10%;
+    display: inline-block;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    font-size: larger;
+    margin-left: 1rem;
+    color: $textColor;
+    border: 1px solid #adb1b8 #a2a6ac #8d9096;
+    background: #f0c14b;
+    width: auto;
+}
+
+#backto:hover{
+    background:#ddaa28;
+}
+
+
+@media screen and (max-width){
+    #linkedin{
+        width: 60%;
+    }
+}

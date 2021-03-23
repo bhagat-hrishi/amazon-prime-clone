@@ -1,0 +1,28 @@
+.bylanguage {
+  background: #0f171e;
+  vertical-align: middle;
+  padding-left: 20px;
+  padding-top: 5rem;
+  overflow: hidden;
+}
+.bylanguage__title {
+  color: white;
+    position: relative;
+    left:50px;
+}
+
+.bylanguage__img-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.bylanguage__img-container__img-item {
+  cursor: pointer;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin-right: 1rem;
+}
+.bylanguage__img-container__img-item:hover{
+    transform: scale(1.2);
+}

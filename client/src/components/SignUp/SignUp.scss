@@ -1,0 +1,90 @@
+@import '../../assets/sharedscss/form.scss';
+@import '../SignIn/SignIn.scss';
+
+.goToSignUp{
+    text-decoration: none;
+    color: #0066c0;
+    font-size: small;
+}
+
+// For placeholder color
+::placeholder {
+    color: #808080;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: #808080;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+   color: #808080;
+  }
+
+
+// For error handling in signup form
+#errordiv{
+    width: 20%;
+    margin: auto;
+    display: flex;
+    vertical-align: middle;
+    padding: .3rem;
+    font-family: Arial, sans-serif;
+    border: 1px solid #c40000;
+    box-shadow: 0 0 0 4px #fcf4f4 inset;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    #erroricon{
+        position: relative;
+        top: 10px;
+        padding-left: 1rem;
+    }
+    #errorinfo{
+        padding: 1rem;
+        padding-left: 1.5rem;
+        
+        h4{
+            color: #c40000;
+            font-weight: lighter;
+        }
+        ol{
+            list-style: disc;
+            padding-left:1rem;
+            
+            
+        }
+        li{
+            font-size: smaller;
+        }
+    }
+}
+
+@media screen and (max-width:1500px){
+  .form__button{
+    height: 2.5rem ;
+  }
+}
+@media screen and (max-width: 900px) {
+    #errordiv{
+      width: 40%;
+    }
+    .form__button{
+      height: 3rem ;
+    }
+  }
+  
+  @media screen and (max-width: 700px) {
+    
+    #errordiv{
+      width: 50%;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    #errordiv{
+      width: 80%;
+    }
+
+    
+}
+  

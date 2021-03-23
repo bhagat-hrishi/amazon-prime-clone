@@ -1,0 +1,55 @@
+@import '../Welcome.scss';
+
+// for for Welcome banner 4
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+
+// for banner 4
+.welcomebanner4 {
+    @include generalForAllBanner();
+    flex-wrap: wrap;
+    padding-bottom: 5%;
+}
+.welcomebanner4__item {
+    overflow: hidden;
+    width: 33%;
+    padding: 16px;
+    font-family: "Lato", sans-serif;
+    text-align: center;
+}
+.welcomebanner4__item img {
+    width: 70%;
+    height: 70%;
+}
+.welcomebanner4__title {
+    font-size: 2rem;
+    font-weight: lighter;
+}
+
+.welcomebanner4__description {
+    font-size: larger;
+}
+
+
+
+// for responsive design
+@media screen and (max-width: 700px) {
+    .welcomebanner4__item img {
+        width: 60%;
+        height: 60%;
+    }
+}
+
+@media screen and (max-width: 448px) {
+    .welcomebanner4 {
+        flex-direction: column;
+    }
+    .welcomebanner4__item {
+        width: 100%;
+    }
+    .welcomebanner4__item img {
+        width: 70%;
+        height: 70%;
+    }
+}
+  
+  

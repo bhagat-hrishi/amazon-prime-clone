@@ -1,0 +1,52 @@
+@import "../../assets/sharedscss/form.scss";
+
+
+#feedbackdiv{
+    position: relative;
+    top: 10%;
+    margin-bottom:7rem;
+}
+
+#feebackmesssage{
+    max-width: 100%;
+    min-width: 100%;
+
+    min-height: 20vh;
+    max-height: 60vh;
+    
+}
+
+#feedbackbacktohome{
+    width: auto;
+    position: fixed;
+    padding: 1rem;
+    top: 0;
+    text-align: center;
+    margin: auto;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    color: black;
+    cursor: pointer;
+    font-size: larger;;
+    border: 1px solid #adb1b8 #a2a6ac #8d9096;
+    background: #f0c14b;
+}
+
+#feedbackbacktohome:hover{
+    background:#ddaa28; 
+}
+
+#feedbacksucess,#feedbackfail {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    z-index: 30;
+    position: relative;
+    top: 40px;
+    color: green;
+}
+#feedbackfail{
+    color: #c40000;
+    width: 80%;
+}

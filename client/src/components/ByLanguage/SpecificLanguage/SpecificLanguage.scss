@@ -1,0 +1,44 @@
+// .google fonts
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Expanded:wght@300&display=swap');
+
+.specific-language{
+    background-color: #0f171e;
+}
+
+#specific-language__languagename{
+    color: #8197a4;
+    position: relative;
+    top: 90px;
+    left: 45px;
+}
+.specific-language__movie-container{
+   background-color: #0f171e;
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+}
+.single-movie-item{
+    padding: 1rem;
+    width: 270px;
+    cursor: pointer;
+    
+}
+.single-movie-item img{
+    width: 250px;
+    height: 150px;
+    border-radius: 2px;
+}
+.single-movie-item__title{
+    font-weight: bold;
+    width: 90%;
+    text-align: center;
+    color: white;
+    font-family: 'Encode Sans Semi Expanded', sans-serif;
+}
+
+.single-movie-item:hover,
+.single-movie-item:active{
+    transform: scale(1.2,1.8);
+    z-index: 2;
+    
+}

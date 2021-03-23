@@ -1,0 +1,47 @@
+.form-footer{
+  padding-bottom: 1.5rem;
+}
+
+.form-footer__line {
+  width: 80%;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.form-footer__links {
+  background-color: transparent;
+  background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0), #fff);
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.form-footer__link-item {
+  text-decoration: none;
+  color: #0066c0;
+  font-size: small;
+}
+
+.form-footer__link-item:hover {
+  text-decoration: underline;
+  color: #bb890b;
+}
+
+
+
+@media screen and (max-width: 900px) {
+  .form-footer__links{
+    width: 50%;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .form-footer__links{
+    width: 80%;
+  }
+}

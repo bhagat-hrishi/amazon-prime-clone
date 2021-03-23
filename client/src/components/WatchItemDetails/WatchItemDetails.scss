@@ -1,0 +1,41 @@
+
+.watch-item__details{
+    div{
+        display: flex;
+        position: relative;
+        
+        .watch-item__details__info{
+            position: absolute;
+            left: 20%;
+        }
+    }
+
+}
+
+.watch-item__details__title{
+    color: #8197a4;
+    font-weight: bold;
+}
+.watch-item__details__info{
+    color: #79b8f3;
+    transition: color .2s ease-in-out;
+    text-decoration: none
+}
+.watch-item__details__info:hover{
+    color: #bfddf9;
+    cursor: pointer;
+}
+
+@media screen  and (max-width:480px){
+    .watch-item__details{
+        div{
+            flex-direction: column;
+
+            .watch-item__details__info{
+                position: static;
+                left: 0%;
+            }
+        }
+        
+    }
+}

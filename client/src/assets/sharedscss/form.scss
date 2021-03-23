@@ -1,0 +1,49 @@
+@mixin formstructure {
+  width: 20%;
+  padding: 2rem;
+  margin: auto;
+  border: 1px solid #a6a6a6;
+  border-radius: 5px;
+  padding-bottom: 1rem;
+}
+
+@mixin formLogo {
+  text-align: center;
+  width: 10%;
+  margin: auto;
+  padding: 1rem 0;
+  cursor: pointer;
+}
+
+@mixin formTitle {
+  
+  font-size: x-large;
+  font-weight: lighter;
+}
+
+label{
+    font-weight: bold;
+}
+
+@mixin formInput {
+  display: block;
+  width: 100%;
+  height: 2rem;
+  border: 1px solid #a6a6a6;
+  border-radius: 3px
+}
+
+@mixin formButton {
+  width: 100%;
+  height: 2rem;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid ;
+  border-color: #adb1b8 #a2a6ac #8d9096;
+  border-radius: 3px;
+}
+
+
+
+
+// for Input focus color changing

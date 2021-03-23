@@ -1,0 +1,45 @@
+$backgroundColor:#0f171e;
+
+#details{
+    background: $backgroundColor;
+    color: #fff;
+    padding-left: 5%;
+    padding-bottom: 2rem;
+    
+    h3{
+        padding-bottom: 1rem;
+    }
+}
+
+#details{
+    div{
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+    }
+    .details__position{
+        color: #8197a4;
+        font-weight: bold;
+    }
+    .details__value{
+        color: #79b8f3;
+        position: absolute;
+        left: 20%;
+    }
+}
+
+@media screen and (max-width:480px){
+    #details{
+        width: 100%;
+        padding:1rem;
+        margin:0%;
+        
+        div{
+           flex-direction: column;
+        }
+        .details__value{
+            position: static;
+            left: 0%;
+        }
+    }
+}

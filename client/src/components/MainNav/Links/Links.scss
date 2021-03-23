@@ -1,0 +1,122 @@
+
+$backgroundColor:#0f171e;
+
+
+.links{
+   display: flex;
+   justify-content: space-between;
+   width: 40%;
+   margin-left: 2% ;
+}
+
+.links__main-logo{
+    position: relative;
+    top: 20%;
+}
+
+.links__main-logo img{
+    width: 140px;
+    height: 35px;
+    object-fit: cover;
+}
+.links-desktop{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mobile-nav{
+    display: none;
+}
+.links__link{
+    text-decoration:none;
+    color: rgba(242,244,246,.9);
+    margin: 8px 0;
+}
+
+.links__link:hover{
+    color: white;
+}
+
+.links__link__isactive{
+    border-bottom:2px solid white;
+    font-weight: bolder;
+    color: white;
+}
+
+// responsive part start
+
+@media screen and (max-width:1200px){
+    .links{
+        width: 40%;
+    }
+}
+
+@media screen and (max-width:1000px){
+    .links{
+        width: 35%;
+    }
+    .links__link{
+        margin-right: .5rem;
+    }
+}
+
+@media screen and (max-width:700px){
+    .links{
+        width: 50%;
+    }
+    .links-desktop{
+        display: none;
+    }
+    .mobile-nav{
+        display: block;
+        justify-content: flex-start;
+    }
+
+    #browselink{
+        color: #8197a4;
+        display: block;
+        position: relative;
+        top: 20%;
+    }
+    #mobile-links{
+        height: 0%;
+        width: 100%;
+        position: fixed;
+        z-index: 99;
+        top: 0;
+        left: 0;
+        background: $backgroundColor;
+        overflow-y: hidden;
+        transition: 0.5s;
+    }
+    .mobile-links__link{
+        color: rgba(242,244,246,.9);
+        text-decoration: none;
+        width: 100%;
+        text-align: center;
+        display: block;
+        padding: 1rem;
+        font-size: 2rem;
+    }
+    .mobile-links__link{
+        color: #fff;
+    }
+    #closenav{
+        position: absolute;
+        color: #fff;
+        
+        bottom: 0px;
+        right: 25%;
+        display: block;
+        text-align: center;
+        left: 50%;
+        font-size: 5rem;
+        margin-left: -150px;
+        bottom: 150px;
+    }
+    .links__main-logo img{
+        width: 100px;
+        height: 30px;
+    }
+}

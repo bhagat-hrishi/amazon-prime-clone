@@ -1,0 +1,32 @@
+$backgroundColor : #0f171e;
+
+.watchlist{
+    box-sizing: border-box;
+    background: $backgroundColor;
+    position: relative;
+    padding-top: 2rem;
+    top: 70px;
+    overflow: hidden;
+    
+}
+.watchlist__title{
+    color: white;
+    text-decoration: underline;
+    position: relative;
+    left: 70px;
+}
+
+.watchlist__link{
+    color: #8197a4;
+    display: inline-block;
+    position: relative;
+    left: 50px;
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+.watchlist__link:hover{
+    color: #fff;
+}

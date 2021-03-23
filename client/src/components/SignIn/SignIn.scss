@@ -1,0 +1,146 @@
+@import "../../assets/sharedscss/form.scss";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+.formlogo {
+  @include formLogo;
+  display: flex;
+  justify-items: center;
+}
+.formlogo img {
+  width: 100%;
+}
+
+.loginwarning{
+  color: #d9a520;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem
+
+}
+
+.form-error{
+    @include formstructure;
+    padding: 1rem;
+    border-color:#c40000;
+    margin-bottom: 1rem;
+}
+
+.form {
+  @include formstructure;
+}
+
+.form__title {
+  @include formTitle;
+}
+.form__input {
+  @include formInput;
+}
+
+#form__passwordlable{
+
+	display: flex;
+	justify-content: space-between;
+    label{
+      display: block;
+    }
+   #forgotpassword{
+	display: block; 
+	text-decoration: none;
+	color: #0066c0;
+	font-size: smaller;
+   }
+   #forgotpassword:hover{
+	text-decoration: underline;
+    cursor: pointer;
+    color: #c45500
+   }
+}
+.form__button {
+  @include formButton;
+  background-color: #f0c14b;
+}
+.form_condition {
+  font-size: smaller;
+}
+
+.form_condition a {
+  text-decoration: none;
+}
+
+.form_gotologin {
+  width: 100%;
+  text-align: center;
+  font-size: small;
+  border-bottom: 1px solid #e7e7e7;
+  line-height: 0.1em;
+  margin: 10px 0 20px;
+}
+.form_gotologin span {
+  background: #fff;
+  padding: 0 10px;
+  color: #a5a5a5;
+}
+
+.create-account-button {
+  width: 100%;
+  height: 2rem;
+  cursor: pointer;
+  background: #f7f7f7;
+  outline: none;
+  border: 1px solid #a6a6a6;
+  border-radius: 3px;
+}
+.create-account-button:hover {
+  background: #ececec;
+}
+
+input:focus {
+  border:none;
+  outline: 20px solid glinear-gradient(to right, #d9a520, #d9a520, #ffd700);;
+}
+
+@media screen and (max-width: 900px) {
+  .form {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .form {
+    width: 50%;
+  }
+  .formlogo{
+      width: 20%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .form {
+    width: 80%;
+  }
+   .formlogo{
+      width: 40%;
+  }
+  
+  #form__passwordlable{
+    flex-direction: column;
+  }
+
+  .create-account-button{
+    height: 3rem;
+  }
+}
+
+
+// for error message in signin
+#errormessage{
+  color: #c40000;
+  font-weight:4;
+  font-size: smaller;
+  font-family: Arial,sans-serif !important;
+}
