@@ -31,7 +31,8 @@ router.put('/',(req,res)=>{
                     'resetPasswordToken' : null,
                     'resetPasswordExpires' : null
                 }).then((result)=>{
-                    console.log(`password of ${name} is updated ${result}`);
+                    console.log(JSON.stringify(result));
+                    console.log(`password of ${name} is updated `);
                     res.status(200).json({
                         sucess : true,
                         message : 'password updated'
@@ -41,6 +42,12 @@ router.put('/',(req,res)=>{
                         sucess:false,
                         message :'error in update'
                     })
+                })
+            })
+            .catch((err)=>{
+                res.json({
+                    sucess:false,
+                    message :'no user exist in db to update'
                 })
             })
             

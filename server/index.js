@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const path = require('path');
 require('dotenv').config();
 
 const app = express();
@@ -40,14 +41,6 @@ let port = process.env.PORT ||  3709;
 
 const DB_URL = process.env.DB_URL;
 
-if (process.env.NODE_ENV === 'production') {
-  // Set static folder
-  app.use(express.static('client/build'));
-
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  });
-}
 
 mongoose.connect(
     DB_URL,

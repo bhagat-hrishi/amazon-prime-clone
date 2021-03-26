@@ -26,7 +26,8 @@
     "express-session": "^1.17.1",
     "googleapis": "^68.0.0",
     "mongoose": "^5.11.13",
-    "nodemailer": "^6.4.17"
+    "nodemailer": "^6.4.17",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "morgan": "^1.10.0",

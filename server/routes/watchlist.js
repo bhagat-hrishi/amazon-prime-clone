@@ -15,13 +15,13 @@ router.get('/tv/:userId',(req,res)=>{
 
     User.findById({_id:userId})
     .then((user)=>{
-        // console.log(consoleMessage.sucessMessage())
+        console.log(consoleMessage.sucessMessage('sending tv watchlist'))
         res.status(200).send({
             data : user.tvWatchList
         });
     })
     .catch((err)=>{
-        console.log(err);
+        console.log(consoleMessage.errorMessage('tv watchlist error',err));
         res.send('error');
     })
 })
@@ -39,7 +39,7 @@ router.get('/movie/:userId',(req,res)=>{
         });
     })
     .catch((err)=>{
-        console.log(err);
+        console.log(consoleMessage.errorMessage('movie watchlist error',err));
         res.send('error');
     })
 })
