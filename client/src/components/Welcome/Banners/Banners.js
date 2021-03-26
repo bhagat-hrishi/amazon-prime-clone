@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {  useHistory } from "react-router-dom";
 // scss and image import
 import './Banners.scss'
 import welcome1 from "../../../assets/images/welcome/welcome1.jpg";
@@ -7,6 +7,14 @@ import welcome2 from "../../../assets/images/welcome/welcome2.jpg";
 import welcome3 from "../../../assets/images/welcome/welcome3.jpg";
 
 const Banners = ()=>{
+
+    const history = useHistory();
+
+    const gotoHomeAsGuest =()=>{
+        sessionStorage.setItem('Guest',true)
+        history.push('/home');
+    }
+
     return (
         <>
         {/* Banner 1 */}
@@ -21,7 +29,9 @@ const Banners = ()=>{
                         award-winning Amazon Originals
                     </p>
                     <br />
-                    <button>Start your 30-day free trial</button>
+                    <button onClick={()=>{
+                        alert('Try Loing as guest')
+                    }}>Start your 30-day free trial</button>
                 </div>
                 <div className="welcomebanner1_img">
                     <img
@@ -52,7 +62,7 @@ const Banners = ()=>{
                         more.
                     </p>
                     <br />
-                    <button>Get Started</button>
+                    <button onClick={gotoHomeAsGuest}>Get Started</button>
                 </div>
             </div>
         {/* Banner 3 */}
@@ -77,7 +87,7 @@ const Banners = ()=>{
                     of the title you want to watch to find it in seconds.
                 </p>
                 <br />
-                <button>Get Started</button>
+                <button onClick={gotoHomeAsGuest}>Get Started</button>
             </div>
           </div>
 
