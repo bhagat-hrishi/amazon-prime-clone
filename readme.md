@@ -8,7 +8,7 @@ Hosted on netlify https://myprimeclone.netlify.app/
 **Features** 
 
 * Registered and Guest users can Watch the trailer of movies
-* Select movies by different language
+* Select movies in a different languages
 * Only registered user can add movies and tv shows to their watchlist
 * While resetting the password registered user will receive email and through the link present inside the email user will reset the password 
 
@@ -111,11 +111,17 @@ download the .zip file.  Extract the contents of the zip file, then open your te
 
     MONGO_ATLAS_PW = dbpassword
 
-    GMAIL_PASS = email password
-
+    DB_URL = db url from mongodb atlas
+    
     FEEDBACK_GMAIL = email id
 
-    DB_URL = db url from mongodb atlas
+    CLIENT_ID = clinet id
+
+    CLIENT_SECRET = client secret
+
+    REDIRECT_URI = https://developers.google.com/oauthplayground 
+
+    REFRESH_TOKEN = refresh token
 
 
 
