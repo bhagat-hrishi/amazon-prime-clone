@@ -27,8 +27,8 @@ client/*.env
 # for server
 server/*.env
 server/node_modules
-
 server/routes/users.js
+
 
 # vs code
 *.vscode
