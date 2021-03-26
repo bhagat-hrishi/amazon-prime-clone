@@ -22,13 +22,6 @@ const WList=(props)=>{
 
     const [userInfo , setUserInfo] = useContext(UserInfoContext);
     const [data,setData]=useState([]);
-
-    let WarningMessage = ''
-    if(props.mediaType == 'tv'){
-        WarningMessage = 'You have no TV shows on Your Watchlist';
-    }else{
-        WarningMessage = 'You have no movies on Your Watchlist';
-    }
     useEffect(() => {
 
         async function fetchData(){
@@ -40,11 +33,8 @@ const WList=(props)=>{
                     // console.log(`For ${props.mediaType} data `,request.data)
                     setData(request.data.data)
 
-                    // display required height if watchlist items are less
-                    if(data.length>0 && data.length<11 && screen.width>=700){
-                        document.getElementById('wlist').style.height='65vh'
-                    }else if(data.length>0){
-                        document.getElementById('wlist').style.heigh='auto';
+                    if(request.data.data.length>0 && request.data.data.length<10){
+                        document.getElementById('wlist').style.height = '80vh'
                     }
                 }else{
                     // console.log('data not found');
@@ -57,7 +47,7 @@ const WList=(props)=>{
     },[mediaType])
 
         const history = useHistory();
-        let path ='';
+
         const goToWatchComponentHandler =(event)=>{
                 let id = event.target.id;
                 if(props.mediaType == 'tv'){
@@ -85,7 +75,7 @@ const WList=(props)=>{
                                 
                                 onClick={goToWatchComponentHandler}
                             />
-                            <DeleteOutlineIcon   title='remove from watchlist' className='delete-watchlist-icon' onClick={deleteFromWatchListHandler}/>
+                            {/* <DeleteOutlineIcon   title='remove from watchlist' className='delete-watchlist-icon' onClick={deleteFromWatchListHandler}/> */}
                         </div>
                     )
                 })}

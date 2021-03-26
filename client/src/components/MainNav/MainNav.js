@@ -104,7 +104,7 @@ const MainNav = ()=>{
                 {
                   sessionStorage.getItem('Guest') ? null :  <Link className='userinfoDiv__link' to='/watchlist'>Your watchlist </Link>
                 }
-                <Link className='userinfoDiv__link' to='/signin' >Account settings</Link>
+                <Link className='userinfoDiv__link' to='/signin'  onClick={()=>{sessionStorage.clear()}} >Account settings</Link>
                 <Link className='userinfoDiv__link' to='/help'>Help</Link>
                 <Link className='userinfoDiv__link' to='/' onClick={()=>{sessionStorage.clear()}}>Sign out</Link>
                 <CancelIcon id='canceluserinfoDiv' fontSize='large' onClick={cancelUserInfoDiv} />
