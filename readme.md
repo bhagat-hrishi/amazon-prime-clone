@@ -1,5 +1,6 @@
 # Amazon Prime Video Clone
 
+![logo](https://m.media-amazon.com/images/G/01/primevideo/seo//primevideo-seo-logo._CB1544649803_.png)
 This project is amazon prime video  clone build in MERN Stack. 
 
 Hosted on netlify https://myprimeclone.netlify.app/
