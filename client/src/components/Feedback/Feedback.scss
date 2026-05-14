@@ -1,52 +1,66 @@
 @import "../../assets/sharedscss/form.scss";
 
-
-#feedbackdiv{
-    position: relative;
-    top: 10%;
-    margin-bottom:7rem;
+.feedback-container {
+  background-color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
 }
 
-#feebackmesssage{
-    max-width: 100%;
-    min-width: 100%;
-
-    min-height: 20vh;
-    max-height: 60vh;
-    
+#feedbackdiv {
+  @include formstructure;
+  margin-bottom: 22px;
 }
 
-#feedbackbacktohome{
-    width: auto;
-    position: fixed;
-    padding: 1rem;
-    top: 0;
-    text-align: center;
-    margin: auto;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
-    color: black;
-    cursor: pointer;
-    font-size: larger;;
-    border: 1px solid #adb1b8 #a2a6ac #8d9096;
-    background: #f0c14b;
+#feebackmesssage {
+  @include formInput;
+  height: auto;
+  min-height: 100px;
+  padding: 8px;
+  font-family: inherit;
+  resize: vertical;
 }
 
-#feedbackbacktohome:hover{
-    background:#ddaa28; 
+#feedbackbacktohome {
+  @include amazonButton('secondary');
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: auto;
+  padding: 0 15px;
+  text-decoration: none;
+  line-height: 27px;
+  font-size: 13px;
+  font-weight: 400;
 }
 
-#feedbacksucess,#feedbackfail {
-    margin: auto;
-    width: 50%;
-    text-align: center;
-    z-index: 30;
-    position: relative;
-    top: 40px;
-    color: green;
+#feedbacksucess, #feedbackfail {
+  width: 100%;
+  max-width: 350px;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  border: 1px solid;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #fff;
+
+  h2 {
+    font-size: 15px;
+    font-weight: 400;
+    margin: 0;
+  }
 }
-#feedbackfail{
-    color: #c40000;
-    width: 80%;
+
+#feedbacksucess {
+  border-color: #008a00;
+  color: #008a00;
+}
+
+#feedbackfail {
+  border-color: #c40000;
+  color: #c40000;
 }

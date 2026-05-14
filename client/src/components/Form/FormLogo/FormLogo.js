@@ -6,11 +6,11 @@ import formlogo from '../../../assets/images/formlogo.png';
 
 const FormLogo = ()=>{
     return (
-        <>
-            <Link className="formlogo" to="/">
-            <img src={formlogo} alt="formlogo"></img>
+        <div className="form-logo-container">
+            <Link to="/">
+                <img src={formlogo} alt="Amazon Prime Video" />
             </Link>
-        </>
+        </div>
     )
 }
 

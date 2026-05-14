@@ -31,11 +31,7 @@ router.post('/',(req,res)=>{
                 email : email,
                 password : password,
                 resetPasswordToken : '',
-                resetPasswordExpires : '',
-                watchlist :{
-                    movie:[],
-                    tv:[]
-                }
+                resetPasswordExpires : ''
             })
 
             bcrypt.genSalt(BCRYPT_SALT_ROUNDS, function(err, salt){

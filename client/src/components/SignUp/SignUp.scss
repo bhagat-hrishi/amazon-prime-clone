@@ -1,90 +1,118 @@
-@import '../../assets/sharedscss/form.scss';
-@import '../SignIn/SignIn.scss';
+@import "../../assets/sharedscss/form.scss";
 
-.goToSignUp{
-    text-decoration: none;
+.signup-container {
+  background-color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#errordiv {
+  width: 100%;
+  max-width: 350px;
+  border: 1px solid #c40000;
+  border-radius: 4px;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  display: flex;
+  background-color: #fff;
+
+  #erroricon {
+    margin-right: 15px;
+  }
+
+  #errorinfo {
+    h4 {
+      color: #c40000;
+      font-size: 17px;
+      font-weight: 400;
+      margin-bottom: 4px;
+    }
+
+    ol {
+      margin-left: 18px;
+      font-size: 13px;
+      color: #111;
+      
+      li {
+        margin-bottom: 2px;
+        list-style: disc;
+      }
+    }
+  }
+}
+
+.form {
+  @include formstructure;
+  margin-bottom: 22px;
+}
+
+.form__title {
+  @include formTitle;
+}
+
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form__input {
+  @include formInput;
+}
+
+.form__button {
+  @include amazonButton('primary');
+  margin-top: 10px;
+}
+
+.password-info {
+  font-size: 12px;
+  color: #111;
+  margin-top: 4px;
+  display: flex;
+  align-items: flex-start;
+
+  i {
     color: #0066c0;
-    font-size: small;
+    margin-right: 4px;
+    margin-top: 2px;
+  }
 }
 
-// For placeholder color
+.form_condition {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #111;
+  margin-top: 18px;
+  border-bottom: 1px solid #e7e7e7;
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+
+  a {
+    color: #0066c0;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+      color: #c45500;
+    }
+  }
+}
+
+.already-have-account {
+  font-size: 13px;
+  color: #111;
+
+  .goToSignIn {
+    color: #0066c0;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+      color: #c45500;
+    }
+  }
+}
+
 ::placeholder {
-    color: #808080;
-    opacity: 1; /* Firefox */
-  }
-  
-  :-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color: #808080;
-  }
-  
-  ::-ms-input-placeholder { /* Microsoft Edge */
-   color: #808080;
-  }
-
-
-// For error handling in signup form
-#errordiv{
-    width: 20%;
-    margin: auto;
-    display: flex;
-    vertical-align: middle;
-    padding: .3rem;
-    font-family: Arial, sans-serif;
-    border: 1px solid #c40000;
-    box-shadow: 0 0 0 4px #fcf4f4 inset;
-    border-radius: 5px;
-    margin-bottom: 1rem;
-    #erroricon{
-        position: relative;
-        top: 10px;
-        padding-left: 1rem;
-    }
-    #errorinfo{
-        padding: 1rem;
-        padding-left: 1.5rem;
-        
-        h4{
-            color: #c40000;
-            font-weight: lighter;
-        }
-        ol{
-            list-style: disc;
-            padding-left:1rem;
-            
-            
-        }
-        li{
-            font-size: smaller;
-        }
-    }
+  color: #808080;
+  opacity: 1;
 }
-
-@media screen and (max-width:1500px){
-  .form__button{
-    height: 2.5rem ;
-  }
-}
-@media screen and (max-width: 900px) {
-    #errordiv{
-      width: 40%;
-    }
-    .form__button{
-      height: 3rem ;
-    }
-  }
-  
-  @media screen and (max-width: 700px) {
-    
-    #errordiv{
-      width: 50%;
-    }
-  }
-  
-  @media screen and (max-width: 480px) {
-    #errordiv{
-      width: 80%;
-    }
-
-    
-}
-  

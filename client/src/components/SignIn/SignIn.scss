@@ -1,146 +1,132 @@
 @import "../../assets/sharedscss/form.scss";
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
-.formlogo {
-  @include formLogo;
+.signin-container {
+  background-color: #fff;
+  min-height: 100vh;
   display: flex;
-  justify-items: center;
+  flex-direction: column;
+  align-items: center;
 }
-.formlogo img {
+
+.loginwarning {
+  color: #c40000;
+  background: #fff;
+  border: 1px solid #c40000;
+  border-radius: 4px;
+  padding: 10px 15px;
+  margin-bottom: 20px;
   width: 100%;
-}
-
-.loginwarning{
-  color: #d9a520;
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.5rem
-
-}
-
-.form-error{
-    @include formstructure;
-    padding: 1rem;
-    border-color:#c40000;
-    margin-bottom: 1rem;
+  max-width: 350px;
+  font-size: 13px;
+  font-weight: 400;
 }
 
 .form {
   @include formstructure;
+  margin-bottom: 22px;
 }
 
 .form__title {
   @include formTitle;
 }
+
+.form-group {
+  margin-bottom: 14px;
+}
+
 .form__input {
   @include formInput;
 }
 
-#form__passwordlable{
+#form__passwordlable {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2px;
 
-	display: flex;
-	justify-content: space-between;
-    label{
-      display: block;
+  label {
+    padding-bottom: 0;
+  }
+
+  #forgotpassword {
+    text-decoration: none;
+    color: #0066c0;
+    font-size: 13px;
+    font-weight: 400;
+
+    &:hover {
+      text-decoration: underline;
+      color: #c45500;
     }
-   #forgotpassword{
-	display: block; 
-	text-decoration: none;
-	color: #0066c0;
-	font-size: smaller;
-   }
-   #forgotpassword:hover{
-	text-decoration: underline;
-    cursor: pointer;
-    color: #c45500
-   }
+  }
 }
+
 .form__button {
-  @include formButton;
-  background-color: #f0c14b;
+  @include amazonButton('primary');
+  margin-top: 10px;
 }
+
 .form_condition {
-  font-size: smaller;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #111;
+  margin-top: 18px;
+
+  a {
+    color: #0066c0;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+      color: #c45500;
+    }
+  }
 }
 
-.form_condition a {
-  text-decoration: none;
-}
-
-.form_gotologin {
+.new-to-amazon {
   width: 100%;
+  max-width: 350px;
   text-align: center;
-  font-size: small;
-  border-bottom: 1px solid #e7e7e7;
-  line-height: 0.1em;
-  margin: 10px 0 20px;
-}
-.form_gotologin span {
-  background: #fff;
-  padding: 0 10px;
-  color: #a5a5a5;
+  position: relative;
+  margin-bottom: 14px;
+
+  h5 {
+    font-size: 12px;
+    color: #767676;
+    font-weight: 400;
+    background: #fff;
+    display: inline-block;
+    padding: 0 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #e7e7e7;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 0;
+  }
 }
 
 .create-account-button {
+  @include amazonButton('secondary');
   width: 100%;
-  height: 2rem;
-  cursor: pointer;
-  background: #f7f7f7;
-  outline: none;
-  border: 1px solid #a6a6a6;
-  border-radius: 3px;
-}
-.create-account-button:hover {
-  background: #ececec;
+  max-width: 350px;
+  height: 29px;
 }
 
-input:focus {
-  border:none;
-  outline: 20px solid glinear-gradient(to right, #d9a520, #d9a520, #ffd700);;
-}
-
-@media screen and (max-width: 900px) {
-  .form {
-    width: 40%;
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .form {
-    width: 50%;
-  }
-  .formlogo{
-      width: 20%;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .form {
-    width: 80%;
-  }
-   .formlogo{
-      width: 40%;
-  }
-  
-  #form__passwordlable{
-    flex-direction: column;
-  }
-
-  .create-account-button{
-    height: 3rem;
-  }
-}
-
-
-// for error message in signin
-#errormessage{
+#errormessage {
   color: #c40000;
-  font-weight:4;
-  font-size: smaller;
-  font-family: Arial,sans-serif !important;
-}
+  font-size: 12px;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+
+  i {
+    margin-right: 4px;
+  }
+}

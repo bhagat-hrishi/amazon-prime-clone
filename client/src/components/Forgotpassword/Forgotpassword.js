@@ -1,118 +1,118 @@
-import React,{useEffect, useState,useRef} from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
-// images import and icons and scss
-import formlogo from "../../assets/images/formlogo.png";
-import "./Forgotpassword.scss";
+import API_BASE_URL from '../../config';
+
 // normal component import
 import FormFooter from "../Form/FormFooter/FormFooter";
+import FormLogo from '../Form/FormLogo/FormLogo';
+import "./Forgotpassword.scss";
 
 const Forgotpassword = () => {
-    const [email,setEmail] = useState("");
-    const[emailnotEnteredError,setemailnotEnteredError]=useState(false);
-    const [isemailfound , setEmailFound ]  =  useState(true);
-    const [isemailSend , setEmailSend]  = useState(false);
-    let inputRef = useRef(null)
-    useEffect(() => {
-    //   To change document title
-    document.title = 'Amazon Password Assistance'
-  // Focus input on document load
-    inputRef.current.focus();
-    }, [])
+  const [email, setEmail] = useState("");
+  const [emailnotEnteredError, setemailnotEnteredError] = useState(false);
+  const [isemailfound, setEmailFound] = useState(true);
+  const [isemailSend, setEmailSend] = useState(false);
+  const inputRef = useRef(null);
 
-    const inputChangeHandler = (event)=>{
-      // console.log(event.target)
-      setEmail(event.target.value);
+  useEffect(() => {
+    document.title = 'Amazon Password Assistance';
+    if (inputRef.current) {
+      inputRef.current.focus();
     }
-    const formSubmitHandler =(event)=>{
-        event.preventDefault();
-        const user = {
-          email : email
-        }
-        if(email.trim()===''){
-          setemailnotEnteredError(true);
-        }else{
-        setemailnotEnteredError(false);
-            axios.post('https://myprimecloneserver.herokuapp.com/forgotpassword',user)
-          .then(result =>{
-            // console.log(result);
-              let message  = result.data.message ;
-              let sucess = result.data.sucess;
-              if(!sucess){
-                setEmailFound(false);
-                setEmailSend(false);
-              }
-              if(sucess){
-                setEmailFound(true);
-                setEmailSend(true);
-                setEmail('');
-              }
+  }, []);
 
-          })
-          .catch(err =>{
-              console.log('Error in sending email',err);
-          })
-        
-        }//else end
+  const inputChangeHandler = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const formSubmitHandler = (event) => {
+    event.preventDefault();
+    const user = {
+      email: email
+    };
+    if (email.trim() === '') {
+      setemailnotEnteredError(true);
+    } else {
+      setemailnotEnteredError(false);
+      axios.post(`${API_BASE_URL}/forgotpassword`, user)
+        .then(result => {
+          let sucess = result.data.sucess;
+          if (!sucess) {
+            setEmailFound(false);
+            setEmailSend(false);
+          }
+          if (sucess) {
+            setEmailFound(true);
+            setEmailSend(true);
+            setEmail('');
+          }
+        })
+        .catch(err => {
+          console.log('Error in sending email', err);
+          setEmailFound(false);
+        });
     }
+  };
+
   return (
-    <React.Fragment>
-      <div>
-        <Link className='formlogo' to='/'>
-          <img src={formlogo} alt='formlogo'></img>
-        </Link>
-        {
-          isemailfound ? null :
-          <div id='errordiv' style={{color:'#c40000'}} className='animate__animated animate__fadeIn'>
-              Email Address is not present
-          </div>  
-        }
-        {
-          isemailSend ? <div id='sucessemail' className='animate__animated animate__bounceIn'>
-              <h4>Your password reset email has sent !</h4>
-              <p>
-                we have send password reset email to your email address. 
-                Please check your inbox and continue
-              </p>
-          </div> : null
-        }
-        <div className='form animate__animated animate__fadeInDown'>
-          <h2 className='form__title'>Password assistance</h2>
-          <br />
-          <p>
-            Enter the email address  associated with your
-            Amazon account.
-          </p>
-          <form onSubmit={formSubmitHandler}>
-            <div>
-              <label>Email</label>
-              <input
-                type='email'
-                className='form__input'
-                ref={inputRef}
-                name = 'email'
-                value={email}
-                onChange={inputChangeHandler}
-              ></input>
-            </div>
-            {
-              emailnotEnteredError ? 
-              <p id='errormessage' className='animate__animated animate__fadeIn'> 
-                  <i className="fas fa-exclamation"></i>Please Enter email
-              </p> : null
-            }
-            <br />
+    <div className="forgotpassword-container">
+      <FormLogo />
 
-            <br />
-            <button className='form__button' type='submit'>
-              Send Password Link
-            </button>
-          </form>
-          <br />
+      {!isemailfound && (
+        <div id='errordiv' className='animate__animated animate__fadeIn'>
+          <div id='erroricon'>
+            <i className="fas fa-exclamation-triangle" style={{ fontSize: 30, color: '#c40000' }}></i>
+          </div>
+          <div id='errorinfo'>
+            <h4>There was a problem</h4>
+            <p style={{ fontSize: '13px' }}>We're sorry. We wasn't able to find an account with that email address.</p>
+          </div>
         </div>
+      )}
+
+      {isemailSend && (
+        <div id='sucessemail' className='animate__animated animate__bounceIn'>
+          <h4>Your password reset email has sent!</h4>
+          <p>
+            We have sent a password reset link to your email address.
+            Please check your inbox and continue.
+          </p>
+        </div>
+      )}
+
+      <div className='form animate__animated animate__fadeIn'>
+        <h2 className='form__title'>Password assistance</h2>
+        <p>
+          Enter the email address associated with your Amazon account.
+        </p>
+        <form onSubmit={formSubmitHandler}>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              type='email'
+              id="email"
+              className='form__input'
+              ref={inputRef}
+              name='email'
+              value={email}
+              onChange={inputChangeHandler}
+            />
+            {emailnotEnteredError && (
+              <p id='errormessage' className='animate__animated animate__fadeIn'>
+                <i className="fas fa-exclamation-circle"></i> Please enter your email
+              </p>
+            )}
+          </div>
+
+          <button className='form__button' type='submit'>
+            Continue
+          </button>
+        </form>
       </div>
+
       <FormFooter />
-    </React.Fragment>
+    </div>
   );
 };
 

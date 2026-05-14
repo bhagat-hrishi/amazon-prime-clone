@@ -1,49 +1,105 @@
 @mixin formstructure {
-  width: 20%;
-  padding: 2rem;
-  margin: auto;
-  border: 1px solid #a6a6a6;
-  border-radius: 5px;
-  padding-bottom: 1rem;
+  width: 100%;
+  max-width: 350px;
+  padding: 20px 26px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 1px 0 rgba(255,255,255,.5) inset, 0 1px 0 rgba(0,0,0,.07);
 }
 
 @mixin formLogo {
   text-align: center;
-  width: 10%;
-  margin: auto;
-  padding: 1rem 0;
-  cursor: pointer;
+  padding: 14px 0 18px;
+  
+  img {
+    width: 103px;
+    height: auto;
+  }
 }
 
 @mixin formTitle {
-  
-  font-size: x-large;
-  font-weight: lighter;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  color: #111;
 }
 
-label{
-    font-weight: bold;
+label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  padding-left: 2px;
+  padding-bottom: 2px;
+  color: #111;
 }
 
 @mixin formInput {
   display: block;
   width: 100%;
-  height: 2rem;
+  height: 31px;
+  padding: 3px 7px;
+  line-height: normal;
+  background-color: #fff;
   border: 1px solid #a6a6a6;
-  border-radius: 3px
-}
-
-@mixin formButton {
-  width: 100%;
-  height: 2rem;
-  cursor: pointer;
-  outline: none;
-  border: 1px solid ;
-  border-color: #adb1b8 #a2a6ac #8d9096;
+  border-top-color: #949494;
   border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(255,255,255,.5), 0 1px 0 rgba(0,0,0,.07) inset;
+  outline: 0;
+  font-size: 13px;
+  transition: all 0.1s linear;
+
+  &:focus {
+    border-color: #e77600;
+    box-shadow: 0 0 3px 2px rgba(228,121,17,.5);
+  }
 }
 
+@mixin amazonButton($type: 'primary') {
+  width: 100%;
+  height: 29px;
+  cursor: pointer;
+  outline: 0;
+  border: 1px solid;
+  border-radius: 3px;
+  font-size: 13px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0;
+  
+  @if $type == 'primary' {
+    background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+    border-color: #a88734 #9c7e31 #846a29;
+    color: #111;
+    
+    &:hover {
+      background: linear-gradient(to bottom, #f5d78e, #eeb933);
+      border-color: #a0812f #94772c #7e6527;
+    }
+    
+    &:active {
+      background-color: #f0c14b;
+      box-shadow: 0 1px 3px rgba(0,0,0,.2) inset;
+    }
+  } @else {
+    background: linear-gradient(to bottom, #f7f8fa, #e7e9ec);
+    border-color: #adb1b8 #a2a6ac #8d9096;
+    color: #111;
+    
+    &:hover {
+      background: linear-gradient(to bottom, #e7eaf0, #d9dce1);
+      border-color: #a2a6ac #979ba1 #82858a;
+    }
+    
+    &:active {
+      background-color: #e7e9ec;
+      box-shadow: 0 1px 3px rgba(0,0,0,.2) inset;
+    }
+  }
+}
 
-
-
-// for Input focus color changing
+.form-logo-container {
+  @include formLogo;
+}
